@@ -1,0 +1,20 @@
+===== Follow given steps =====
+1) create database in your phpmyadmin
+	- database: react-sequelize
+
+2) go to project directory in cmd
+	- npm install
+	- if error throe sass compilation then write below comman in cmd
+		- npm rebuild node-sass
+		- npm install node-sass
+	- npm start
+	- Automatic run "http://localhost:3000" in your browser
+
+3) go to new cmd
+	- cd /api
+	- npm install
+	- sequelize db:migrate
+	- npm start
+	- API call "http://localhost:3001/"
+
+4) Enjoy, Thanks!
