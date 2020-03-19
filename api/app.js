@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
 const app = express();
 const port = process.env.PORT || '3001'
 
@@ -17,9 +18,11 @@ app.use(function (req, res, next) {
       next();
 });
 
+app.use(fileUpload());
+
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }))
- 
+
 // parse application/json
 app.use(bodyParser.json())
 

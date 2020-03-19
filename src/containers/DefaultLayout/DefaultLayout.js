@@ -18,11 +18,12 @@ import {
 import navigation from '../../_nav';
 // routes config
 import routes from '../../routes';
+import { ToastsContainer, ToastsContainerPosition, ToastsStore } from 'react-toasts';
 
 const DefaultAside = React.lazy(() => import('./DefaultAside'));
 const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
-const isAuthenticated = false;
+const isAuthenticated = true;
 
 class DefaultLayout extends Component {
 
@@ -36,9 +37,9 @@ class DefaultLayout extends Component {
 
   render() {
     if (isAuthenticated) {
-
       return (
         <div className="app">
+          <ToastsContainer position={ToastsContainerPosition.TOP_RIGHT} store={ToastsStore}/>
           <AppHeader fixed>
             <Suspense  fallback={this.loading()}>
               <DefaultHeader onLogout={e=>this.signOut(e)}/>
